@@ -12,12 +12,16 @@
         margin: 0;
         padding: 0;
         font-family: "Poppins", sans-serif;
+        /* width: 100vw; 
+        overflow-x: hidden; */
     }
+
+    /* header */
     header{
         text-transform: uppercase;
         display: block;
         /* min-width: 1280px; */
-        min-width: 100vw;
+        /* min-width: 100vw; */
         width: min-content;
     }
     .top{
@@ -38,6 +42,10 @@
         margin-bottom: -10px;
         width: 24px;
     }
+    .alert{
+        color: black; font-weight: bold; font-size: 1.25rem; padding-top: 20px; text-align: center;
+    }
+    /* navbar */
     .nav{
         display: flex;
         /* justify-content: space-evenly; */
@@ -46,6 +54,10 @@
     }
     nav{
         background-color: #EBEBEB;
+    }
+    .links{
+        transition: .5s ease all;
+        display: flex;
     }
     .links ul{
         list-style-type: none;
@@ -59,8 +71,8 @@
         text-decoration: none;
         font-size: 1rem;
     }
-    .logo img{
-        width: 70%;   
+    .logo img{  
+        width: 150px;
         min-width: 50px; 
         margin-top: -40px;     
     }
@@ -72,12 +84,12 @@
     }
     .links ul img{
         width: 50%;
-        min-width: 15px;
+        min-width: 18px;
     }
 .banner{
     background-color: #D9D9D9;
     width: 100%;
-    min-width: 1280px;
+    /* min-width: 1280px; */
     /* max-height: 100vh; */
     box-sizing: border-box;
     /* display: block; */
@@ -86,6 +98,301 @@
 .banner img{
     margin: auto;
 }
+#banner-text{
+    width: 30%;position: relative; float: inline-start; padding-top: 13%; padding-left: 4%;
+}
+#banner-man{
+    width: 40%; margin-bottom: -6px; padding-left: 5%;
+}
+#banner-flag{
+    width: 15%; float: inline-end;
+}
+.hamburger{
+    display: none;
+    font-size: 24px;
+}
+/* 1. Remove that fixed min-width so everything can shrink */
+/* header,
+.banner {
+  min-width: 0;
+} */
+
+/* 2. Fluid typography (optional but nice) */
+.top,
+.alert,
+.links ul li a {
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+}
+.delivery img{
+    width: 35px;
+}
+/* 3. Breakpoints */
+@media (min-width: 1388px) {
+    header, .banner{
+        min-width: 100%;
+        /* width: min-content; */
+    }
+}
+
+/* Large desktops (up to 1200px) */
+@media (max-width: 1200px) {
+  .nav { padding: 0 40px; }
+  .banner { padding: 20px 40px 0; }
+  .banner img:nth-child(1) { width: 35%; }
+  .banner img:nth-child(2) { width: 40%; }
+  .banner img:nth-child(3) { width: 20%; }
+}
+
+/* Laptops / tablets (up to 992px) */
+@media (max-width: 992px) {
+    header,
+    .banner {
+    width: 100%;
+    }
+  .top {
+    padding: 16px 30px;
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .alert {
+    font-size: 1.1rem;
+    padding-top: 12px;
+  }
+  .nav {
+    padding: 0 30px;
+  }
+  .logo img {
+    width: 50%;
+    margin-top: 10px;
+  }
+  .links ul li {
+    padding: 0 8px;
+  }
+  .banner {
+    padding: 15px 30px 0;
+  }
+  .banner img {
+    max-width: 90%;
+    margin: 10px auto;
+  }
+  .nav {
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+  }
+  .logo,
+  .hamburger{
+    display: inline-block;
+    margin: 0 !important;
+  }
+
+  .links {
+    /* if you have a hamburger, hide links by default */
+    display: none;
+    max-width: 400px;
+    position: absolute;
+    background-color: #D9D9D9;
+    top: 222px;
+    right: -300%;
+    padding: 0 40px 0 40px;
+    z-index: 999;
+}
+.btn{
+    width: 50%;
+}
+.links.active{
+    display: block;
+    transition: 1s ease all;
+    /* top: 170px; */
+    right: 0;
+}
+.links ul {
+    text-align: start !important;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0;
+  }
+  .nav-icons ul{
+    display: flex;
+    flex-direction: row;
+  }
+  .links ul li {
+    padding: 10px 0;
+  }
+
+}
+@media (min-width: 971px){
+    .links{
+        top: 202px;
+    }
+} 
+@media (max-width: 768px) {
+    .links{
+        top: 202px;
+    }
+    .top {
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    padding: 12px 10px;
+    font-size: 0.7rem;
+  }
+  .alert {
+    font-size: 0.8rem;
+    padding-top: 8px;
+  }
+
+  .logo img{
+    width: 50%;
+    margin-top: 10px;
+  }
+  .banner {
+    padding: 10px 20px 0;
+  }
+  .banner img {
+    width: 100%;
+    margin: 8px 0;
+  }
+}
+/* Small phones (up to 576px) */
+@media (max-width: 576px) {
+  .top {
+    font-size: 0.5rem;
+    padding: 8px 5px;
+    
+  }
+  .top img{
+    width: 10px;
+    padding: 0;
+    margin: 0;
+}
+.top div{
+    padding: 0;
+    margin: 0;
+  }
+  .alert {
+    font-size: 0.6rem;
+  }
+  .nav {
+    padding: 0 20px;
+  }
+  .logo img {
+    width: 40%;
+    /* margin-top: -20px; */
+  }
+  .links{
+    top: 122px;
+    padding: 0 40px 0 20px;
+
+  }
+  .links ul li {
+    padding: 10px 5px;
+    font-size: 0.8rem;
+  }
+  .nav-icons ul li{
+    display: flex;
+    flex-direction: row;
+  }
+  .banner {
+    padding: 20px 10px 0;
+  }
+  .banner img {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+@media (max-width: 465px) {
+    .links{
+        top: 145px;
+    }
+}
+
+
+
+/* Category card */
+
+main {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  font-family: 'Roboto', sans-serif;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 24rem;
+  height: 25rem;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  color: white;
+  /* box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2); */
+  margin: 50px;
+ 
+  img {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+    transition: opacity .2s ease-out;
+  }
+
+  h2 {
+    position: absolute;
+    inset: auto auto 30px 30px;
+    margin: 0;
+    transition: inset .3s .3s ease-out;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+  
+  p, a {
+    position: absolute;
+    opacity: 0;
+    max-width: 80%;
+    transition: opacity .3s ease-out;
+  }
+  
+  p {
+    inset: auto auto 80px 30px;
+  }
+  
+  a {
+    inset: auto auto 40px 30px;
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  &:hover h2 {
+    inset: auto auto 220px 30px;
+    transition: inset .3s ease-out;
+  }
+  
+  &:hover p, &:hover a {
+    opacity: 1;
+    transition: opacity .5s .1s ease-in;
+  }
+  
+  &:hover img {
+    transition: opacity .3s ease-in;
+    opacity: 1;
+  }
+
+}
+
+.material-symbols-outlined {
+  vertical-align: middle;
+}
+
 </style>
 <body>
     <header>
@@ -101,9 +408,12 @@
             <div class="contact"><img src="assets/icons/XMLID_7_.png" alt="">Contact Us</div>
         </section>
         <nav>
-            <div class="alert" style="color: black; font-weight: bold; font-size: 1.25rem; padding-top: 20px; text-align: center;">35% OFF SALE ON ENTIRE STORE+ FREE SHIPPING OVER $49</div>
+            <div class="alert" style="">35% OFF SALE ON ENTIRE STORE+ FREE SHIPPING OVER $49</div>
             <div class="nav">
                 <div class="logo"><img src="assets/logo.png" alt=""></div>
+                <div class="hamburger" onclick="toggleMenu()">
+                    <i class="bi bi-list"></i>
+                </div>
                 <div class="links">
                     <ul>
                         <li><a href="">home</a></li>
@@ -116,23 +426,92 @@
                         <li><a href="" class="btn">size&nbsp;chart</a></li>
                         <li><a href="" class="btn">help/faq</a></li>
                     </ul>
-                </div>
-                <div class="links nav-icons">
-                    <ul>
-                    <li><a href="" class="location"><img src="assets/icons/location.png" alt=""></a></li>
-                    <li><a href="" class="search"><img src="assets/icons/Magnifying glass.png" alt=""></a></li>
-                    <li><a href="" class="cart"><img src="assets/icons/Group 52.png" alt=""></a></li>
-                    <li><a href="" class="lang"><img src="assets/icons/Language.png" alt=""></a></li>
-                    <li><a href="" class="profile"><img src="assets/icons/Group 30.png" alt=""></a></li>
-                </ul>
+                    <div class="nav-icons">
+                        <ul>
+                            <li><a href="" class="location"><img src="assets/icons/location.png" alt=""></a></li>
+                            <li><a href="" class="search"><img src="assets/icons/Magnifying glass.png" alt=""></a></li>
+                            <li><a href="" class="cart"><img src="assets/icons/Group 52.png" alt=""></a></li>
+                            <li><a href="" class="lang"><img src="assets/icons/Language.png" alt=""></a></li>
+                            <li><a href="" class="profile"><img src="assets/icons/Group 30.png" alt=""></a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>
         <section class="banner">
-            <img style="width: 30%;position: relative; float: inline-start; padding-top: 150px; padding-left: 30px;" src="assets/banner/Mens Suits Atlanta 1.png" alt="">
-            <img style="width: 40%; margin-bottom: -6px; padding-left: 70px;" src="assets/banner/Group 76.png" alt="">
-            <img src="assets/banner/Group 65.png" style="width: 15%; float: inline-end;" alt="">
+            <img style="" id="banner-text" src="assets/banner/Mens Suits Atlanta 1.png" alt="">
+            <img style="" id="banner-man" src="assets/banner/Group 76.png" alt="">
+            <img style="" id="banner-flag" src="assets/banner/Group 65.png"alt="">
         </section>
     </header>
+
+
+    <main>
+        <div class = "card">
+          <img src="https://images.unsplash.com/photo-1656618020911-1c7a937175fd?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTc1MzQyNTE&ixlib=rb-1.2.1&q=80" alt="">
+          <div class="card-content">
+            <h2>
+              Card Heading
+            </h2>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt exercitationem iste, voluptatum, quia explicabo laboriosam rem adipisci voluptates cumque, veritatis atque nostrum corrupti ipsa asperiores harum? Dicta odio aut hic.
+            </p>
+            <a href="#" class="button">
+              Find out more 
+              <span class="material-symbols-outlined">
+                arrow_right_alt
+              </span>
+            </a>
+          </div>
+        </div>
+
+
+        <div class = "card">
+            <img src="https://images.unsplash.com/photo-1656618020911-1c7a937175fd?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTc1MzQyNTE&ixlib=rb-1.2.1&q=80" alt="">
+            <div class="card-content">
+              <h2>
+                Card Heading
+              </h2>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt exercitationem iste, voluptatum, quia explicabo laboriosam rem adipisci voluptates cumque, veritatis atque nostrum corrupti ipsa asperiores harum? Dicta odio aut hic.
+              </p>
+              <a href="#" class="button">
+                Find out more 
+                <span class="material-symbols-outlined">
+                  arrow_right_alt
+                </span>
+              </a>
+            </div>
+          </div>
+
+
+          <div class = "card">
+            <img src="https://images.unsplash.com/photo-1656618020911-1c7a937175fd?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTc1MzQyNTE&ixlib=rb-1.2.1&q=80" alt="">
+            <div class="card-content">
+              <h2>
+                Card Heading
+              </h2>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt exercitationem iste, voluptatum, quia explicabo laboriosam rem adipisci voluptates cumque, veritatis atque nostrum corrupti ipsa asperiores harum? Dicta odio aut hic.
+              </p>
+              <a href="#" class="button">
+                Find out more 
+                <span class="material-symbols-outlined">
+                  arrow_right_alt
+                </span>
+              </a>
+            </div>
+          </div>
+          
+      </main>
+
+
+    
+    <script>
+        function toggleMenu() {
+            const links = document.querySelector('.links');
+            links.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
